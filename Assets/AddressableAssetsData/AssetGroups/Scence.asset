@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Scence
+  m_EditorClassIdentifier: 
+  m_GroupName: Scence
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9e523bcc78d90be458764bc59ee183bd
+  m_SerializeEntries:
+  - m_GUID: 2067358a14720ab4aa22441b5c73e2e3
+    m_Address: Assets/Scenes/Rabbit2.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2cda990e2423bbf4892e6590ba056729
+    m_Address: caoyuan
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b7a059d2c1dab34786536cdba4076ab
+    m_Address: Assets/Scenes/Menu.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c80cebeb33b1d04bb70ee3fa4c6afef
+    m_Address: chengbao
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5961c60147fe404f8fb8b8126f81e31
+    m_Address: Assets/Scenes/migong.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b969853050ef48d4cbcbe27a393cf6a1
+    m_Address: Assets/Scenes/Chongwu1.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2764e5152b38cb45819b84b87d119e6
+    m_Address: Assets/Scenes/Rabbit1.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f28bd32bf4acaff41acf08dcb66231fe
+    m_Address: Persistent
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 2b9330381352f764ba76416389a0307b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 663c10380d7516c45a79b522d6d5fb6d, type: 2}
+    - {fileID: 11400000, guid: 90a1d25f4ec01264891c2d554fa65450, type: 2}

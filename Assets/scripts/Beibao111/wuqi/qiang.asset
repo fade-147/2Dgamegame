@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c8962e3af03a243a816c9d00af4403, type: 3}
+  m_Name: qiang
+  m_EditorClassIdentifier: 
+  itemName: "\u67AA"
+  description: "\u8FD9\u662F\u4E00\u652F\u67AA"
+  icon: {fileID: -625552312, guid: 67ecaccb8d622264582e89ceb4d136d7, type: 3}
+  itemType: 2
+  weaponPrefab: {fileID: 6157295439637980766, guid: 90c28ff9ddb505b4586c74bcdea93463, type: 3}
+  damage: 0
+  defense: 0

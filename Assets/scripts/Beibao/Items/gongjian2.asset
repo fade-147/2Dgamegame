@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b668fc2f7a114a943871113c778260bc, type: 3}
+  m_Name: gongjian2
+  m_EditorClassIdentifier: 
+  itemName: gongjian2
+  itemImage: {fileID: -790680087, guid: 8e5bdb5d3951f6f4d94c99f6e909af6f, type: 3}
+  itemHeld: 6
+  itemInfo: "\u8FD9\u662F\u4E00\u4E2A\u9EC4\u91D1\u5F13\u7BAD\uFF0C\u53EF\u4EE5\u5C04\u51FA\u9EC4\u91D1\u7BAD\u54E6"
+  itemType: 2

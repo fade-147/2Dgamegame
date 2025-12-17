@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26aa5adb798fda64c995b77c5c3df537, type: 3}
+  m_Name: Dialogue1 4
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speakerName: "\u9F99\u9A91\u58EB"
+    speakerSprite: {fileID: 1066972633, guid: ec6024434cc0c7f4eb61be20590aef7f, type: 3}
+    sentenceContent: "\u6309R\u6253\u5F00\u5B9D\u7BB1\uFF0C\u8FD9\u662F\u6211\u8D50\u4E88\u7ED9\u4F60\u7684\u5B9D\u5251"
+  - speakerName: 
+    speakerSprite: {fileID: 0}
+    sentenceContent: "\u6253\u5F00\u53F3\u4E0A\u89D2\u7684\u80CC\u5305\uFF0C\u7136\u540E\u8BD5\u8BD5\u5355\u51FB\u9F20\u6807\u5DE6\u952E\u5427"

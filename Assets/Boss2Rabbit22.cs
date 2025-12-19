@@ -13,7 +13,8 @@ public class Boss2Rabbit22 : MonoBehaviour
     public Animator bossAnimator; // 拖拽赋值BOSS的Animator
     public Rigidbody2D rb;
     private PyhsicsCheck pyCheck;
-    public GameObject FinishGame;
+
+    public Dialogue dialogue;
     [Header("基本属性")]
     public float maxHealth;
     public float currentHealth;
@@ -55,7 +56,7 @@ public class Boss2Rabbit22 : MonoBehaviour
 
     private PickupSpawner pickupSpawner;   //掉落道具脚本的引用
     private bool everPickUp;
-
+    public GameObject Bound;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -342,7 +343,8 @@ public class Boss2Rabbit22 : MonoBehaviour
     private IEnumerator DestroyAfterAnimation()
     {
         yield return new WaitForSeconds(2f);
-        FinishGame.SetActive(true);
+        DialogueManager.Instance.StartDialogue(dialogue);
+        Bound.SetActive(false);
         //   BossxieUI.SetActive(false);
         Destroy(this.gameObject);
     }
@@ -366,7 +368,7 @@ public class Boss2Rabbit22 : MonoBehaviour
         {
             spawnPos.y -= 2f; // Y轴减2f = 偏下方（2D场景Y轴向上，减=下）
         }
-        // 生成炮弹（实例化）
+        // 生成炮弹
         GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.Euler(0, 0, 90));
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.velocity = new Vector2(faceDir * bulletSpeed, 0);      //给炮弹一个速度

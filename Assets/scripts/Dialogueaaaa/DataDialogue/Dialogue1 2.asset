@@ -16,3 +16,6 @@ MonoBehaviour:
   - speakerName: "\u9F99\u9A91\u58EB"
     speakerSprite: {fileID: 1066972633, guid: ec6024434cc0c7f4eb61be20590aef7f, type: 3}
     sentenceContent: "\u6D1E\u7A74\u91CC\u6BD4\u8F83\u9ED1\uFF0C\u6CE8\u610F\u4E00\u70B9"
+  - speakerName: "\u9F99\u9A91\u58EB"
+    speakerSprite: {fileID: 1066972633, guid: ec6024434cc0c7f4eb61be20590aef7f, type: 3}
+    sentenceContent: "\u70B9\u51FB\u9F20\u6807\u5DE6\u952E\u53EF\u4EE5\u51B2\u523A\uFF0C\u6CE8\u610F\u6D88\u8017\u4F53\u529B\u54E6"

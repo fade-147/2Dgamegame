@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue; // 拖入你创建的Dialogue资源
+    public Dialogue dialogue;
     private bool isPlayerInRange = false; // 标记玩家是否在触发范围内
     private bool FinishDialogue=false;
     // 碰撞体进入时，标记玩家在范围内

@@ -84,7 +84,13 @@ public class Character : MonoBehaviour,ISaveable
             DunFangyu = 4;
         }else if (currentFangyu != null && currentFangyu.itemName == "金包木盾")
         {
+            DunFangyu = 7;
+        }else if (currentFangyu != null && currentFangyu.itemName == "钻石木盾")
+        {
             DunFangyu = 6;
+        }else if (currentFangyu != null && currentFangyu.itemName == "钻石盾")
+        {
+            DunFangyu = 8;
         }
 
     }

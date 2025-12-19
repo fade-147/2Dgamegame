@@ -21,4 +21,4 @@ MonoBehaviour:
     sentenceContent: "\u5466\uFF0C\u8DD1\u7684\u633A\u5FEB\u5440"
   - speakerName: "\u60A8"
     speakerSprite: {fileID: 21300000, guid: d3bdad39927fc394d9093d96f2b8314e, type: 3}
-    sentenceContent: "\u7EC8\u4E8E\u8FFD\u4E0A\u4F60\u4E86\uFF0C\u5FEB\u628A\u5957\u88C5\u8FD8\u56DE\u6765"
+    sentenceContent: "\u7EC8\u4E8E\u8FFD\u4E0A\u4F60\u4E86\uFF0C\u5FEB\u628A\u88C5\u5907\u8FD8\u56DE\u6765"

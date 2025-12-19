@@ -34,6 +34,8 @@ public class UIMangager : MonoBehaviour
     public GameObject WuqiPanel;
     public Button Beibao;
     public GameObject BeibaoPanel;
+    public Button HeCheng;
+    public GameObject HeChengPanel;
 
     private void Awake()
     {
@@ -41,6 +43,7 @@ public class UIMangager : MonoBehaviour
         TianfuBtn.onClick.AddListener(ToggleTianfuPanel);
         WuqiBtn.onClick.AddListener(ToggleWuqiPanel);
         Beibao.onClick.AddListener(ToggleBeibaoPanel);
+        HeCheng.onClick.AddListener(ToggleHeChengPanel);
     }
     public void OnEnable()
     {
@@ -85,6 +88,10 @@ public class UIMangager : MonoBehaviour
         {
             BeibaoPanel.SetActive(false);
         }
+        if (HeChengPanel.activeInHierarchy)
+        {
+            HeChengPanel.SetActive(false);
+        }
 
         if (pausePanel.activeInHierarchy)   //菜单如果已经激活了，那么再点一下就关闭
         {
@@ -111,6 +118,10 @@ public class UIMangager : MonoBehaviour
         if (BeibaoPanel.activeInHierarchy)
         {
             BeibaoPanel.SetActive(false);
+        }
+        if (HeChengPanel.activeInHierarchy)
+        {
+            HeChengPanel.SetActive(false);
         }
 
         if (TianfuPanel.activeInHierarchy)   //技能菜单如果已经激活了，那么再点一下就关闭
@@ -139,6 +150,10 @@ public class UIMangager : MonoBehaviour
         {
             BeibaoPanel.SetActive(false);
         }
+        if (HeChengPanel.activeInHierarchy)
+        {
+            HeChengPanel.SetActive(false);
+        }
 
         if (WuqiPanel.activeInHierarchy)   //技能菜单如果已经激活了，那么再点一下就关闭
         {
@@ -166,6 +181,10 @@ public class UIMangager : MonoBehaviour
         {
             WuqiPanel.SetActive(false);
         }
+        if (HeChengPanel.activeInHierarchy)
+        {
+            HeChengPanel.SetActive(false);
+        }
 
         if (BeibaoPanel.activeInHierarchy)   //背包如果已经激活了，那么再点一下就关闭
         {
@@ -178,6 +197,37 @@ public class UIMangager : MonoBehaviour
             BeibaoPanel.SetActive(true);
             Time.timeScale = 0;
         }
+    }
+    private void ToggleHeChengPanel()
+    {
+        if (TianfuPanel.activeInHierarchy)
+        {
+            TianfuPanel.SetActive(false);
+        }
+        if (pausePanel.activeInHierarchy)
+        {
+            pausePanel.SetActive(false);
+        }
+        if (WuqiPanel.activeInHierarchy)
+        {
+            WuqiPanel.SetActive(false);
+        }
+        if (BeibaoPanel.activeInHierarchy)
+        {
+            BeibaoPanel.SetActive(false);
+        }
+        if (HeChengPanel.activeInHierarchy)   //背包如果已经激活了，那么再点一下就关闭
+        {
+            HeChengPanel.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            //   pauseEvent.RaiseEvent();
+            HeChengPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+
     }
     private void OnGameOverEvent()
     {

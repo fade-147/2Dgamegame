@@ -11,11 +11,12 @@ public class Attack : MonoBehaviour
     public int damage;
     public float attackRange;
     public float attackRate;
-    public bool isjinzhan;
+    public bool isjinzhan;    //标记是否为近战
     public gan Gan;
     public bool zidanjiajia;
     public bool HaveFire;
-                          //标记是否为近战
+    public bool HaveEle;
+                          
   
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -75,6 +76,10 @@ public class Attack : MonoBehaviour
         if (HaveFire&&other.GetComponent<Character>()!=null)
         {
             other.GetComponent<Character>().FireStart = true;
+        }
+        if (HaveEle&&other.GetComponent<Character>()!=null)
+        {
+            other.GetComponent<Character>().EleStart = true;
         }
     }
 

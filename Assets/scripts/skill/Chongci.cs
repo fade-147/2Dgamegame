@@ -94,8 +94,14 @@ public class Chongci : MonoBehaviour
                 }
                 ChongciUI.fillAmount = chongLengqueTime / ChongLengque;     //更新技能图标
             }
-            dashObj.SetActive(false);      
+            
         }
+    }
+
+    private IEnumerator FadeCoroutine()
+    {
+        yield return new WaitForSeconds(0.3f);
+        dashObj.SetActive(false);
     }
 
     private void skillchongci(InputAction.CallbackContext context)
@@ -106,7 +112,7 @@ public class Chongci : MonoBehaviour
             isDashing = true;
         }
         startDashTimer = dashTime;
-        
+        StartCoroutine(FadeCoroutine());
     }
    
 

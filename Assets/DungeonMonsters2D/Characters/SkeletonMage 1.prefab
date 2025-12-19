@@ -25,6 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6679783802021260202}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.8, y: -0.26, z: -75.36}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
@@ -32,7 +33,6 @@ Transform:
   m_Children:
   - {fileID: 5448385717537977966}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6679783802021260207
 SpriteRenderer:
@@ -112,6 +112,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6679783802021260201}
     m_Modifications:
     - target: {fileID: -9089087362238835402, guid: fb0cc0d4077b90246bb7a0c85c6d4d95, type: 3}
@@ -603,6 +604,9 @@ PrefabInstance:
       value: 4.43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: fb0cc0d4077b90246bb7a0c85c6d4d95, type: 3}
 --- !u!4 &5448385717537977966 stripped
 Transform:

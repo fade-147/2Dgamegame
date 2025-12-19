@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using DG.Tweening;
 public class pickup : MonoBehaviour
 {
     private Character playercharacter;
+    public AudioSource GetCoin;
 
     [Header("上抛动画")]
     [SerializeField] private float throwHeight = 1f;
@@ -20,11 +22,20 @@ public class pickup : MonoBehaviour
 
     private void Start()
     {
-        GameObject playerObject = GameObject.FindGameObjectWithTag ("Player");
-        if (playerObject != null)
+        GameObject[] allPlayerObjects = GameObject.FindGameObjectsWithTag("Player");
+        // 用于存储目标物体
+
+        // 遍历并筛选带Character组件的物体
+        foreach (GameObject playerObj in allPlayerObjects)
         {
-            playercharacter = playerObject.GetComponent<Character>();
+            // 检查当前物体是否包含Character组件
+            if (playerObj.GetComponent<Character>() != null)
+            {
+                playercharacter = playerObj.GetComponent<Character>();  //防止因为宠物而导致异常
+                break;
+            }
         }
+
         ThrowItem();
         GetGetGet = GetComponent<ItemOnWord>();
     }
@@ -90,7 +101,10 @@ public class pickup : MonoBehaviour
 
     private void HandleCoinPickup()
     {
+
         //如果是金币，则增加金币的数量
+        if(GetCoin!=null)
+        GetCoin.Play();
         GameManager.Instance.AddCoins(value);
     }
 

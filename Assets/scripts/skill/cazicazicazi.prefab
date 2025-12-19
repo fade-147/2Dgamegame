@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -841767889
   m_SortingLayer: 2
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 11a2b7bb9c82daa43a59bee7563f9028, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0388b5da88cb5024c9fc63e2c9a678b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,6 +151,10 @@ MonoBehaviour:
   attackRange: 0
   attackRate: 0
   isjinzhan: 0
+  Gan: {fileID: 0}
+  zidanjiajia: 0
+  HaveFire: 0
+  HaveEle: 0
 --- !u!82 &-5112837973902341678
 AudioSource:
   m_ObjectHideFlags: 0

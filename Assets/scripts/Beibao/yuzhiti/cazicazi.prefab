@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7428785840395640091}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.22338142, w: 0.9747311}
+  m_LocalRotation: {x: 0, y: 0, z: -0.3556553, w: 0.9346172}
   m_LocalPosition: {x: -1.78, y: 3.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -841767889
   m_SortingLayer: 2
   m_SortingOrder: 100
-  m_Sprite: {fileID: 1078062777, guid: 39d6f395756e42642a7a91298e35c1a7, type: 3}
+  m_Sprite: {fileID: -1129760106, guid: 39d6f395756e42642a7a91298e35c1a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265eb6c0b61dc0f4489cb6e51cec0d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GetCoin: {fileID: 0}
   throwHeight: 1
   throwDuration: 1
   pickUpDistance: 3

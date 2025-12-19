@@ -31,11 +31,14 @@ public class gan : MonoBehaviour
     public GameObject gongjianjian;
     public GameObject cazicazi;
     public GameObject cazicazicazi;
+    public GameObject leishen;
+    public GameObject leishenzhichui;
 
     public  bool haveRanged;
     public  bool isGong2Equipped;
     public  bool isGongjianEquipped;
     public  bool isCaziEquipped;
+    public  bool isLeiShenEquipped;
     public GameObject ZidanUIUI;
     private void Awake()
     {
@@ -52,6 +55,10 @@ public class gan : MonoBehaviour
             gongjian2.SetActive(false);
         if (gongjian != null)
             gongjian.SetActive(false);
+        if (cazicazi != null)
+            cazicazi.SetActive(false);
+        if (leishen != null)
+            leishen.SetActive(false);
 
         // 订阅武器变化事件（确保InventoryManager已初始化）
         if (InventoryManager.instance != null)
@@ -82,7 +89,7 @@ public class gan : MonoBehaviour
             isGong2Equipped = currentRanged != null && currentRanged.itemName == "gongjian2";
             isGongjianEquipped = currentRanged != null && currentRanged.itemName == "gongjian1";
             isCaziEquipped = currentRanged != null && currentRanged.itemName == "cazicazi";
-
+            isLeiShenEquipped = currentRanged != null && currentRanged.itemName == "雷神之锤";
 
     }
 
@@ -147,6 +154,13 @@ public class gan : MonoBehaviour
             cazicazi.SetActive(true);
             currentWeapon = cazicazi;
             currentzidan = cazicazicazi;
+            angle -= 45f;
+        }
+        else if(isLeiShenEquipped)
+        {
+            leishen.SetActive(true);
+            currentWeapon = leishen;
+            currentzidan = leishenzhichui;
             angle -= 45f;
         }
         

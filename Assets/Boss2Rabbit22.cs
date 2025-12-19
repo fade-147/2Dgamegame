@@ -74,7 +74,19 @@ public class Boss2Rabbit22 : MonoBehaviour
     {
         if (playerTransform == null)
         {
-            playerTransform = GameObject.FindWithTag("Player")?.transform;
+            GameObject[] allPlayerObjects = GameObject.FindGameObjectsWithTag("Player");
+            // 用于存储目标物体
+
+            // 遍历并筛选带Character组件的物体
+            foreach (GameObject playerObj in allPlayerObjects)
+            {
+                // 检查当前物体是否包含Character组件
+                if (playerObj.GetComponent<Character>() != null)
+                {
+                    playerTransform = playerObj.transform;  //防止因为宠物而导致异常
+                    break;
+                }
+            }
         }
         bossAnimator.SetFloat("velocityY", rb.velocity.y);
 

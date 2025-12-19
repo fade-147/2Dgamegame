@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: gongjian2
   itemImage: {fileID: -790680087, guid: 8e5bdb5d3951f6f4d94c99f6e909af6f, type: 3}
-  itemHeld: 6
+  itemHeld: 1
   itemInfo: "\u8FD9\u662F\u4E00\u4E2A\u9EC4\u91D1\u5F13\u7BAD\uFF0C\u53EF\u4EE5\u5C04\u51FA\u9EC4\u91D1\u7BAD\u54E6"
   itemType: 2

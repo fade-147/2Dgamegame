@@ -78,10 +78,10 @@ public class mouse : MonoBehaviour
     //    animator.SetInteger(attackAnimParameter, 0);
     //}
 
-
     GameObject daoEffect;
     public GameObject slashEffect1;
     public GameObject slashEffect2;
+    public GameObject slashEffect3;
     private Animator animator;
     private Vector2 mousePosition;
     public Vector2 direction;
@@ -93,13 +93,18 @@ public class mouse : MonoBehaviour
     private bool haveDao;
     private bool isbaojian1;
     private bool ishuoyanjian;
+    private bool ishanshuangjian;
 
-    private void Start()
+
+    private void Awake()
     {
+        inputControl = new PlayInputControl();
+        inputControl.gamePlayer.mouseAttack.started += OnAttack;
+
         ganuseing = GetComponent<gan>();
         animator = GetComponent<Animator>();
         canAttack = true;
-        
+
 
         // 订阅武器变化事件（确保InventoryManager已初始化）
         if (InventoryManager.instance != null)
@@ -113,7 +118,6 @@ public class mouse : MonoBehaviour
             );
         }
     }
-
     // 武器变化时的回调
     private void OnWeaponChanged(Item currentMelee, Item currentRanged, Item currentFangyu)
     {
@@ -129,16 +133,14 @@ public class mouse : MonoBehaviour
         // 检查当前远程武器是否为“Qiang”（名称匹配）
         isbaojian1 = currentMelee != null && currentMelee.itemName == "宝剑1";
         ishuoyanjian = currentMelee != null && currentMelee.itemName == "火焰剑";
+        ishanshuangjian = currentMelee != null && currentMelee.itemName == "寒霜剑";
 
 
-    }
-    private void Awake()
-    {
-        inputControl = new PlayInputControl();
-        inputControl.gamePlayer.mouseAttack.started += OnAttack;
     }
     private void OnEnable()
     {
+        inputControl = new PlayInputControl();
+        inputControl.gamePlayer.mouseAttack.started += OnAttack;
         inputControl.Enable();
     }
 
@@ -175,6 +177,9 @@ public class mouse : MonoBehaviour
             }else if (ishuoyanjian)
             {
                 daoEffect= slashEffect2;
+            }else if (ishanshuangjian)
+            {
+                daoEffect= slashEffect3;
             }
 
 

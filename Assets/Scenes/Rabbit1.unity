@@ -35821,6 +35821,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4835796263317761646, guid: 64a148feb43cf0949ab77f5c1787a0c4, type: 3}
+      propertyPath: propPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835796263317761646, guid: 64a148feb43cf0949ab77f5c1787a0c4, type: 3}
+      propertyPath: propPrefabs.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 6229515352608728, guid: 148dd63ee545fdd48994a8ea8ccf2e44, type: 3}
+    - target: {fileID: 4835796263317761646, guid: 64a148feb43cf0949ab77f5c1787a0c4, type: 3}
+      propertyPath: propPrefabs.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 5855873062764991165, guid: 4fc0637a11c025a45854ce13a7d20e70, type: 3}
     - target: {fileID: 5248499431844309221, guid: 64a148feb43cf0949ab77f5c1787a0c4, type: 3}
       propertyPath: BossUI
       value: 

@@ -15,5 +15,5 @@ MonoBehaviour:
   itemName: "\u5BD2\u971C\u5251"
   itemImage: {fileID: 21300000, guid: 93ae354a2533a6142a8ddee7b22e3524, type: 3}
   itemHeld: 1
-  itemInfo: "\u8FD9\u662F\u94BB\u77F3\u5251\uFF0C\u4F1A\u53D1\u51FA\u51B0\u51B7\u7684\u5251\u6C14"
+  itemInfo: "\u8FD9\u662F\u5BD2\u971C\u5251\uFF0C\u4F1A\u53D1\u51FA\u51B0\u51B7\u7684\u5251\u6C14"
   itemType: 1

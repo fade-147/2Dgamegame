@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b668fc2f7a114a943871113c778260bc, type: 3}
+  m_Name: dianshi
+  m_EditorClassIdentifier: 
+  itemName: "\u7535\u77F3"
+  itemImage: {fileID: -3017979480325208809, guid: 4373b5a1916f3a8468bc2b0fdefa655e, type: 3}
+  itemHeld: 1
+  itemInfo: "\u8FD9\u662F\u4E00\u5757\u7535\u6C60\uFF0C\u53EF\u4EE5\u4E0E\u9524\u5B50\u5408\u6210\u96F7\u795E\u4E4B\u9524"
+  itemType: 0

@@ -30,16 +30,29 @@ public class Character : MonoBehaviour,ISaveable
     private float DunFangyu;
 
     public GameObject FireEffect;
+    public GameObject EleEffect;
     public bool FireStart=false;
+    public bool EleStart=false;
     private float FireCurrentTime=0;
     private float FireMaxTime=3f;
+    private bool DieStopFire=false;
 
+    private Vector3 originalScale;
+    private bool HaveEleEffect;
+    public float targetScale = 2f;
+    public float delayTime = 2f;      // 倒计时时长
+    public float scaleDuration = 0.5f;     // 缩放时长
     private void Awake()
     {
         pickupSpawner = GetComponent<PickupSpawner>();  //获取掉落道具脚本的引用
     }
     private void Start()
     {
+        if (EleEffect != null)
+        {
+            originalScale = EleEffect.transform.localScale;
+        }
+        
         if (!isPlayer)
         {
             DunFangyu = 0;
@@ -103,8 +116,8 @@ public class Character : MonoBehaviour,ISaveable
     {
         if (invulnerable)
         {
-            invulnerableCounter-= Time.deltaTime;
-            if(invulnerableCounter <= 0)
+            invulnerableCounter -= Time.deltaTime;
+            if (invulnerableCounter <= 0)
             {
                 invulnerable = false;
             }
@@ -117,11 +130,22 @@ public class Character : MonoBehaviour,ISaveable
                 FireEffect.SetActive(true);
                 FireStart = false;
             }
-            if (FireCurrentTime > 0)
+            if (FireCurrentTime > 0 && !DieStopFire)
             {
                 FireCurrentTime -= Time.deltaTime;
-                currentHealth -= Time.deltaTime * 3;
-                
+                if (currentHealth > 0)
+                {
+                    currentHealth -= Time.deltaTime * 3;
+                }
+                else
+                {
+                    currentHealth = 0;
+                    OnHealthChange?.Invoke(this);
+                    OnDie?.Invoke();
+                    pickupSpawner.DropItems();       //掉落道具
+                    FireCurrentTime = 0;
+                    FireEffect.SetActive(false);
+                }
             }
             else
             {
@@ -129,6 +153,48 @@ public class Character : MonoBehaviour,ISaveable
                 FireEffect.SetActive(false);
             }
         }
+        if (EleEffect != null)
+        {
+            if (EleStart && !HaveEleEffect)
+            {
+                HaveEleEffect = true;
+                EleStart=false;
+                StartCoroutine(ScaleThenDisappear());
+            }
+        }
+    }
+
+
+      IEnumerator ScaleThenDisappear()
+    {
+        EleEffect.SetActive(true);
+        yield return new WaitForSeconds(delayTime);
+
+
+         float elapsedTime = 0f;
+         Vector3 targetVector = originalScale * targetScale;
+       while (elapsedTime < scaleDuration)
+      {
+          elapsedTime += Time.deltaTime;
+          float t = elapsedTime / scaleDuration;
+          // 用Lerp做平滑插值，逐渐放大
+           EleEffect.transform.localScale = Vector3.Lerp(originalScale, targetVector, t);
+           yield return null;
+        }
+        if (currentHealth > 15)
+        {
+            currentHealth -= 15f;
+        }
+        else
+        {
+            currentHealth = 0;
+            OnHealthChange?.Invoke(this);
+            OnDie?.Invoke();
+            pickupSpawner.DropItems();
+        }
+        EleEffect.transform.localScale = targetVector;
+        HaveEleEffect = false;
+        EleEffect.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -171,6 +237,10 @@ public class Character : MonoBehaviour,ISaveable
         }
         if (currentHealth == 0) return;
 
+        if (isjinzhan && currentHealth - attacker.damage > 1)   //先实现顿帧，再扣血
+        {
+            StartCoroutine(TriggerHitStop());
+        }
         if (currentHealth - attacker.damage > 0)
         {
             if(attacker.damage - DunFangyu >= 0)
@@ -184,6 +254,7 @@ public class Character : MonoBehaviour,ISaveable
         }
         else
         {
+            DieStopFire = true;
             currentHealth = 0;   //触发死亡
             OnDie?.Invoke();
             pickupSpawner.DropItems();       //掉落道具
@@ -191,10 +262,6 @@ public class Character : MonoBehaviour,ISaveable
             OnHealthChange?.Invoke(this);
         }
 
-        if (isjinzhan && currentHealth - attacker.damage >= 0)
-        {
-            StartCoroutine(TriggerHitStop());
-        }
         //if (playercontroller.isfangyu==true)
         //{
         //    OKfangyu = true;
@@ -205,7 +272,7 @@ public class Character : MonoBehaviour,ISaveable
         //}
     }
     [Header("实现顿帧")]
-    public float hitStopDuration = 0.05f;          //顿帧的时间
+    public float hitStopDuration = 0.08f;          //顿帧的时间
     public float timeScaleDuringHitStop = 0;
     private bool isHitStopping = false;
     private IEnumerator TriggerHitStop()
